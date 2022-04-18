@@ -1,0 +1,28 @@
+:root {
+  --font-base: "Open Sans", sans-serif;
+  --color-black: #0c0c0c;
+  --color-gray: #545454;
+  --color-grey: #eee;
+  --color-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 62.5%; // 1rem - 10px
+  background-color: var(--color-white);
+  scroll-behavior: smooth;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}

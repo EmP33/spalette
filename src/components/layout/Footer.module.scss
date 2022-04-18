@@ -1,0 +1,17 @@
+.footer {
+  width: 82.5%;
+  margin-left: auto;
+  background: var(--color-grey);
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  & > div {
+    border: 2px solid var(--color-gray);
+    width: 15rem;
+    text-align: center;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-right: 5rem;
+  }
+}
