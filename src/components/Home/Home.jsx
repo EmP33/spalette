@@ -92,7 +92,7 @@ const Home = () => {
           />
         </ul>
       </section>
-      <Footer />
+      <Footer backgroundColor={baseColor} colorText={primaryColor} />
     </div>
   );
 };

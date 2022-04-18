@@ -25,6 +25,10 @@
 
     .draw-color {
       padding: 0.5rem 2rem;
+
+      &:hover {
+        filter: brightness(110%);
+      }
     }
   }
 }

@@ -1,0 +1,14 @@
+.footer {
+  width: 100%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  &__ghprofile {
+    width: 10%;
+  }
+  &__ghrepo {
+    width: 10%;
+  }
+}
