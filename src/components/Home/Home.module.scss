@@ -1,0 +1,77 @@
+.home {
+  width: 82.5%;
+  margin-left: auto;
+
+  .introduction {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    position: relative;
+
+    .left-side {
+      width: 40%;
+      margin-top: 5rem;
+      z-index: 2;
+      & > h1 {
+        font-size: 4.5rem;
+      }
+      & > button {
+        margin-top: 5rem;
+        padding: 1rem 4rem;
+        border: none;
+        outline: none;
+        font-size: 2rem;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    }
+
+    .block {
+      width: 35%;
+      height: 20rem;
+      border-radius: 2rem;
+      height: 80%;
+      z-index: 2;
+    }
+
+    &__divider {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      clip-path: polygon(100% 46%, 0 100%, 100% 100%);
+    }
+  }
+
+  .colors {
+    width: 100%;
+    height: 50vh;
+    padding: 3rem 5rem;
+
+    & > h2 {
+      font-size: 3rem;
+    }
+
+    & > ul {
+      border: 2px solid #fff;
+      margin-top: 2rem;
+      padding: 1rem;
+      list-style: none;
+
+      & > li {
+        width: 100%;
+        border: 2px solid red;
+        padding: 2rem;
+
+        & > div:nth-of-type(1) {
+          background-color: var(--color-white);
+          width: 40%;
+          padding: 1rem;
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
