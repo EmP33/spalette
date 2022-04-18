@@ -1,0 +1,18 @@
+.shadow-element {
+  width: 45%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 5px;
+
+  & > h4 {
+    font-size: 3rem;
+    font-weight: bolder;
+  }
+  & > ul {
+    list-style: none;
+  }
+}
