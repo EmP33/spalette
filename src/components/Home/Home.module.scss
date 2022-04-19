@@ -115,4 +115,25 @@
       justify-content: space-between;
     }
   }
+
+  .buttons {
+    width: 100%;
+
+    & > h2 {
+      font-size: 3rem;
+      padding: 1rem;
+      font-weight: bolder;
+      text-align: center;
+    }
+    & > ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center;
+      align-items: center;
+      column-gap: 3rem;
+      row-gap: 3rem;
+      padding: 5rem 1rem;
+    }
+  }
 }

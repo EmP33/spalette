@@ -10,6 +10,8 @@ import Footer from "./Footer/Footer";
 import ColorElement from "./ColorElement/ColorElement";
 import ShadowElement from "./ShadowElement/ShadowElement";
 
+import ColorButton from "./ColorButton/ColorButton";
+
 import useHttp from "../../hooks/use-http";
 import { getSinglePalette } from "../../lib/api";
 
@@ -127,6 +129,43 @@ const Home = () => {
             header="color-base"
             headerColor={"#333"}
           />
+        </ul>
+      </section>
+      <section styleName="buttons">
+        <h2 style={{ color: baseColor, background: primaryColor }}>Buttons</h2>
+        <ul>
+          <ColorButton
+            backgroundColor={primaryColor}
+            textColor={secondaryColor}
+          />
+          <ColorButton
+            backgroundColor={secondaryColor}
+            textColor={primaryColor}
+          />
+          <ColorButton
+            backgroundColor={tertiaryColor}
+            textColor={primaryColor}
+          />
+          <ColorButton backgroundColor={baseColor} textColor={primaryColor} />
+
+          <ColorButton
+            backgroundColor={primaryColor}
+            textColor={tertiaryColor}
+          />
+          <ColorButton
+            backgroundColor={secondaryColor}
+            textColor={tertiaryColor}
+          />
+          <ColorButton
+            backgroundColor={tertiaryColor}
+            textColor={secondaryColor}
+          />
+          <ColorButton backgroundColor={baseColor} textColor={secondaryColor} />
+
+          <ColorButton backgroundColor={primaryColor} textColor={baseColor} />
+          <ColorButton backgroundColor={secondaryColor} textColor={baseColor} />
+          <ColorButton backgroundColor={tertiaryColor} textColor={baseColor} />
+          <ColorButton backgroundColor={baseColor} textColor={tertiaryColor} />
         </ul>
       </section>
       <Footer backgroundColor={baseColor} colorText={primaryColor} />

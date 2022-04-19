@@ -12,6 +12,7 @@ import HomePage from "./pages/Home/HomePage";
 import Home from "./components/Home/Home";
 
 const App = () => {
+  console.log(process.env);
   return (
     <Router>
       <Routes>

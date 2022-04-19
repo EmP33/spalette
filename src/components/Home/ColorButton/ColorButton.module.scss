@@ -1,0 +1,14 @@
+.button-color {
+  padding: 1.5rem 2.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: 20rem;
+  border: 2px solid var(--color-white);
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(110%);
+  }
+}
