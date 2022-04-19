@@ -45,7 +45,7 @@ const Home = () => {
   const primaryColor = palette?.primary || "#1a3c40";
   const secondaryColor = palette?.secondary || "#1d5c63";
   const tertiaryColor = palette?.tertiary || "#417d7a";
-  const baseColor = palette?.base || "##ede6db";
+  const baseColor = palette?.base || "#ede6db";
 
   return (
     <div styleName="home">
@@ -77,24 +77,28 @@ const Home = () => {
             testerColor={primaryColor}
             usedDivColor={tertiaryColor}
             colorName="color-primary"
+            usedInText="Used in: navbar, colors background, introduction triangle, introduction text, footer elements"
           />
           <ColorElement
             baseColor={baseColor}
             testerColor={secondaryColor}
             usedDivColor={tertiaryColor}
             colorName="color-secondary"
+            usedInText="Used in: Go down Button background"
           />
           <ColorElement
             baseColor={baseColor}
             testerColor={tertiaryColor}
             usedDivColor={tertiaryColor}
             colorName="color-tertiary"
+            usedInText="Used in: block element background, draw palette button"
           />
           <ColorElement
             baseColor={baseColor}
             testerColor={baseColor}
             usedDivColor={tertiaryColor}
             colorName="color-base"
+            usedInText="Used in: footer background, colors background, introduction square background, navbar elements"
           />
         </ul>
       </section>

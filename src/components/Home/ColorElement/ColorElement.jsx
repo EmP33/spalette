@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import CSSModules from "react-css-modules";
 import styles from "./ColorElement.module.scss";
 
-const ColorElement = ({ baseColor, testerColor, usedDivColor, colorName }) => {
+const ColorElement = ({
+  baseColor,
+  testerColor,
+  usedDivColor,
+  colorName,
+  usedInText,
+}) => {
   const [text, setText] = useState("Copy");
 
   const copyToClipboardHandler = () => {
@@ -26,7 +32,7 @@ const ColorElement = ({ baseColor, testerColor, usedDivColor, colorName }) => {
         </div>
       </div>
       <div style={{ background: usedDivColor, color: baseColor }}>
-        Used in: button, div
+        {usedInText}
       </div>
     </li>
   );

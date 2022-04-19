@@ -8,7 +8,11 @@ import { getAllPalettes } from "../../lib/api";
 import useHttp from "../../hooks/use-http";
 import logo from "../../assets/spalette-logo.png";
 
+import { useDispatch } from "react-redux";
+import { palettesActions } from "../../store/palettes-slice";
+
 const HomePage = () => {
+  const dispatch = useDispatch();
   const {
     sendRequest,
     data: palettes,
@@ -19,6 +23,10 @@ const HomePage = () => {
   useEffect(() => {
     sendRequest();
   }, []);
+
+  useEffect(() => {
+    dispatch(palettesActions.setPalettes(palettes));
+  }, [dispatch, palettes]);
 
   if (status === "pending") {
     return <LoadingPage />;
@@ -34,7 +42,7 @@ const HomePage = () => {
   }
 
   return (
-    <Layout palettes={palettes}>
+    <Layout>
       <Home />
     </Layout>
   );
