@@ -8,13 +8,16 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import Home from "./pages/Home/HomePage";
+import HomePage from "./pages/Home/HomePage";
+import Home from "./components/Home/Home";
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/*" element={<HomePage />}>
+          <Route path=":id" element={<Home />} />
+        </Route>
       </Routes>
     </Router>
   );

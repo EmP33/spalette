@@ -6,7 +6,7 @@ import Footer from "./Footer";
 const Layout = (props) => {
   return (
     <>
-      <Menu />
+      <Menu palettes={props.palettes} />
       <main>{props.children}</main>
       <Footer />
     </>

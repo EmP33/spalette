@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Home.module.scss";
 import CSSModules from "react-css-modules";
+
+import { useParams } from "react-router-dom";
 
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
@@ -8,11 +10,42 @@ import Footer from "./Footer/Footer";
 import ColorElement from "./ColorElement/ColorElement";
 import ShadowElement from "./ShadowElement/ShadowElement";
 
+import useHttp from "../../hooks/use-http";
+import { getSinglePalette } from "../../lib/api";
+
 const Home = () => {
-  const primaryColor = "#1a3c40";
-  const secondaryColor = "#1d5c63";
-  const tertiaryColor = "#417d7a";
-  const baseColor = "#ede6db";
+  const params = useParams();
+  const { id } = params;
+  const {
+    sendRequest,
+    data: palette,
+    status,
+    error,
+  } = useHttp(getSinglePalette);
+
+  useEffect(() => {
+    sendRequest(id);
+  }, [id, sendRequest]);
+
+  if (status === "pending") {
+    return (
+      <div className="load-home">
+        <h5>Loading...</h5>
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div className="load-home">
+        <h5>Something went wrong..</h5>
+      </div>
+    );
+  }
+
+  const primaryColor = palette?.primary || "#1a3c40";
+  const secondaryColor = palette?.secondary || "#1d5c63";
+  const tertiaryColor = palette?.tertiary || "#417d7a";
+  const baseColor = palette?.base || "##ede6db";
 
   return (
     <div styleName="home">

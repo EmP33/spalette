@@ -1,14 +1,17 @@
 import React from "react";
 import CSSModules from "react-css-modules";
 import styles from "./Palette.module.scss";
+import { Link } from "react-router-dom";
 
-const Palette = ({ primary, secondary, tertiary, base }) => {
+const Palette = ({ primary, secondary, tertiary, base, id }) => {
   return (
     <li styleName="palette">
-      <div style={{ background: primary }}></div>
-      <div style={{ background: secondary }}></div>
-      <div style={{ background: tertiary }}></div>
-      <div style={{ background: base }}></div>
+      <Link to={`/${id}`}>
+        <div style={{ background: primary }}></div>
+        <div style={{ background: secondary }}></div>
+        <div style={{ background: tertiary }}></div>
+        <div style={{ background: base }}></div>
+      </Link>
     </li>
   );
 };

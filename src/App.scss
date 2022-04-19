@@ -2,3 +2,41 @@
   width: 60%;
   margin: 1rem 0;
 }
+
+.error-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  & > img {
+    width: 15rem;
+  }
+  .error-message {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    color: var(--color-gray);
+  }
+}
+
+.load-home {
+  width: 82.5%;
+  margin-left: auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
