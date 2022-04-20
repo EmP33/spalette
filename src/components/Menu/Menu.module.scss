@@ -12,6 +12,17 @@
   scrollbar-width: thin;
   scrollbar-color: #444 #e0e0e0;
   /* Chrome, Edge, and Safari */
+  & > button {
+    width: 100%;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    outline: none;
+    margin: 1rem 0;
+    color: #333;
+    cursor: pointer;
+  }
+
   &::-webkit-scrollbar {
     width: 10px;
   }
@@ -25,7 +36,7 @@
   }
   .menu__navigation {
     width: 100%;
-    margin-top: 2rem;
+
     display: flex;
     align-items: center;
     justify-content: center;

@@ -4,6 +4,7 @@ import styles from "./Palette.module.scss";
 import { Link } from "react-router-dom";
 
 const Palette = ({ primary, secondary, tertiary, base, id }) => {
+  console.log(id);
   return (
     <li styleName="palette">
       <Link to={`/${id}`}>

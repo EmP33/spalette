@@ -15,9 +15,18 @@ import ColorButton from "./ColorButton/ColorButton";
 import useHttp from "../../hooks/use-http";
 import { getSinglePalette } from "../../lib/api";
 
+import { useSelector, useDispatch } from "react-redux";
+import { palettesActions } from "../../store/palettes-slice";
+
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+
 const Home = () => {
   const params = useParams();
+  const dispatch = useDispatch();
   const { id } = params;
+
+  const favorities = useSelector((state) => state.palettes.favorities);
+
   const {
     sendRequest,
     data: palette,
@@ -44,6 +53,22 @@ const Home = () => {
     );
   }
 
+  console.log(favorities);
+
+  const toggleFavoriteHandler = () => {
+    console.log("Palette id:", id);
+    if (favorities?.includes(id)) {
+      dispatch(palettesActions.removeFavorite(id));
+      localStorage.setItem(
+        "palettes",
+        JSON.stringify(favorities.filter((fav) => fav !== id))
+      );
+    } else {
+      dispatch(palettesActions.setFavorites(id));
+      localStorage.setItem("palettes", JSON.stringify([...favorities, id]));
+    }
+  };
+
   const primaryColor = palette?.primary || "#1a3c40";
   const secondaryColor = palette?.secondary || "#1d5c63";
   const tertiaryColor = palette?.tertiary || "#417d7a";
@@ -56,6 +81,9 @@ const Home = () => {
         text={baseColor}
         buttonColor={tertiaryColor}
       />
+      <button styleName="fav-button" onClick={toggleFavoriteHandler}>
+        {favorities?.includes(id) ? <AiFillHeart /> : <AiOutlineHeart />}
+      </button>
       <section styleName="introduction">
         <div styleName="left-side">
           <h1 style={{ color: primaryColor }}>

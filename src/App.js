@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.scss";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import HomePage from "./pages/Home/HomePage";
 import Home from "./components/Home/Home";
 
+import { useDispatch } from "react-redux";
+import { palettesActions } from "./store/palettes-slice";
+
 const App = () => {
-  console.log(process.env);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const palettes = JSON.parse(localStorage.getItem("palettes"));
+    if (palettes) {
+      dispatch(palettesActions.fetchFavorities(palettes));
+    }
+  }, []);
+
   return (
     <Router>
       <Routes>

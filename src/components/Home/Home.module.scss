@@ -2,6 +2,29 @@
   width: 82.5%;
   margin-left: auto;
 
+  .fav-button {
+    padding: 0.5rem;
+    width: 5rem;
+    border: none;
+    background: #eee;
+    border-radius: 5px;
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    height: 5rem;
+    font-size: 3rem;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.75;
+
+    &:hover {
+      filter: brightness(75%);
+    }
+  }
+
   .introduction {
     width: 100%;
     height: 80vh;

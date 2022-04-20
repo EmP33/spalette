@@ -12,6 +12,17 @@ const palettesSlice = createSlice({
     setPalettes(state, action) {
       state.palettes = action.payload;
     },
+    fetchFavorities(state, action) {
+      state.favorities = [...action.payload];
+    },
+    setFavorites(state, action) {
+      state.favorities = [...state.favorities, action.payload];
+    },
+    removeFavorite(state, action) {
+      state.favorities = state.favorities.filter(
+        (favorite) => favorite !== action.payload
+      );
+    },
   },
 });
 

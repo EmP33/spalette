@@ -30,7 +30,7 @@ const Navbar = ({
         <li
           onClick={drawPaletteHandler}
           styleName="draw-color"
-          style={{ background: buttonColor }}
+          style={{ background: buttonColor, color: backgroundColor }}
         >
           Draw Palette
         </li>
