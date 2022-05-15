@@ -1,5 +1,5 @@
 .shadow-element {
-  width: 45%;
+  max-width: 45%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -8,11 +8,17 @@
   margin: 2rem;
   border-radius: 5px;
 
+  @media screen and (max-width: 900px) {
+    max-width: 40rem;
+  }
+
   & > h4 {
     font-size: 3rem;
     font-weight: bolder;
   }
   & > ul {
     list-style: none;
+    width: 100%;
+    margin: 0 auto;
   }
 }

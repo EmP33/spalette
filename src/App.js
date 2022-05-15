@@ -19,6 +19,10 @@ const App = () => {
     }
   }, []);
 
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
   return (
     <Router>
       <Routes>

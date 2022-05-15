@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   palettes: [],
   favorities: [],
+  showPalettes: false,
 };
 
 const palettesSlice = createSlice({
@@ -22,6 +23,9 @@ const palettesSlice = createSlice({
       state.favorities = state.favorities.filter(
         (favorite) => favorite !== action.payload
       );
+    },
+    toggleShow(state) {
+      state.showPalettes = !state.showPalettes;
     },
   },
 });

@@ -53,8 +53,6 @@ const Home = () => {
     );
   }
 
-  console.log(favorities);
-
   const toggleFavoriteHandler = () => {
     console.log("Palette id:", id);
     if (favorities?.includes(id)) {
@@ -107,7 +105,7 @@ const Home = () => {
             testerColor={primaryColor}
             usedDivColor={tertiaryColor}
             colorName="color-primary"
-            usedInText="Used in: navbar, colors background, introduction triangle, introduction text, footer elements"
+            usedInText="Used in: navbar, colors background, introduction"
           />
           <ColorElement
             baseColor={baseColor}
