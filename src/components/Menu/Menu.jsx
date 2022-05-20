@@ -5,6 +5,7 @@ import CSSModules from "react-css-modules";
 import logo from "../../assets/spalette-logo.png";
 
 import Palette from "../Palette/Palette";
+import { RiLoader3Fill } from "react-icons/ri";
 
 import { useSelector, useDispatch } from "react-redux";
 import { palettesActions } from "../../store/palettes-slice";
@@ -15,8 +16,6 @@ const Menu = () => {
   const favorities = useSelector((state) => state.palettes.favorities);
   const showPalletes = useSelector((state) => state.palettes.showPalettes);
   const [isfavorities, setIsFavorities] = useState(false);
-
-  console.log(showPalletes);
 
   const switchPalettesHandler = () => {
     setIsFavorities((prevState) => !prevState);
@@ -35,6 +34,11 @@ const Menu = () => {
         </button>
         <nav styleName="menu__navigation">
           <ul styleName="palettes">
+            {!palettes.length && (
+              <div styleName="palettes-loading">
+                <RiLoader3Fill className="spinning" />
+              </div>
+            )}
             {isfavorities
               ? favorities
                   ?.map((fav) =>

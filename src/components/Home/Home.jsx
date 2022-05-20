@@ -12,11 +12,9 @@ import ShadowElement from "./ShadowElement/ShadowElement";
 
 import ColorButton from "./ColorButton/ColorButton";
 
-import useHttp from "../../hooks/use-http";
-import { getSinglePalette } from "../../lib/api";
-
 import { useSelector, useDispatch } from "react-redux";
 import { palettesActions } from "../../store/palettes-slice";
+import { getPalette } from "../../store/palettes-slice";
 
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
@@ -26,35 +24,25 @@ const Home = () => {
   const { id } = params;
 
   const favorities = useSelector((state) => state.palettes.favorities);
-
-  const {
-    sendRequest,
-    data: palette,
-    status,
-    error,
-  } = useHttp(getSinglePalette);
+  const palette = useSelector((state) => state.palettes.palette);
 
   useEffect(() => {
-    sendRequest(id);
-  }, [id, sendRequest]);
+    dispatch(getPalette(id));
+  }, [dispatch, id]);
 
-  if (status === "pending") {
-    return (
-      <div className="load-home">
-        <h5>Loading...</h5>
-      </div>
-    );
-  }
-  if (error) {
-    return (
-      <div className="load-home">
-        <h5>Something went wrong..</h5>
-      </div>
-    );
-  }
+  // return (
+  //   <div className="load-home">
+  //     <h5>Loading...</h5>
+  //   </div>
+  // );
+
+  // return (
+  //   <div className="load-home">
+  //     <h5>Something went wrong..</h5>
+  //   </div>
+  // );
 
   const toggleFavoriteHandler = () => {
-    console.log("Palette id:", id);
     if (favorities?.includes(id)) {
       dispatch(palettesActions.removeFavorite(id));
       localStorage.setItem(

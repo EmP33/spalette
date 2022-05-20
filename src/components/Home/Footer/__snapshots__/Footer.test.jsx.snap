@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component should render Footer component with correct background and text color 1`] = `
+<div
+  className="footer"
+  style={
+    Object {
+      "background": "#111",
+    }
+  }
+>
+  <a
+    className="footer__ghprofile"
+    href="https://github.com/EmP33"
+    style={
+      Object {
+        "color": "#fff",
+      }
+    }
+  >
+    Github Profile
+  </a>
+  <h3
+    className="logo"
+    style={
+      Object {
+        "color": "#fff",
+      }
+    }
+  >
+    Spalette
+  </h3>
+  <a
+    className="footer__ghrepo"
+    href="https://github.com/EmP33/spalette"
+    style={
+      Object {
+        "color": "#fff",
+      }
+    }
+  >
+    Github Repo
+  </a>
+</div>
+`;

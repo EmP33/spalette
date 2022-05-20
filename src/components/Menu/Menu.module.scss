@@ -65,16 +65,23 @@
   }
   .menu__navigation {
     width: 100%;
-
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    min-height: 80vh;
     .palettes {
       width: 85%;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
+      height: 100%;
       list-style: none;
+      position: relative;
+
+      &-loading {
+        font-size: 50px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 }

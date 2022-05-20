@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`clipboard should copy text to clipboard on click 1`] = `
+<li>
+  <div
+    style={
+      Object {
+        "background": "#111",
+      }
+    }
+  >
+    Black
+    : 
+    #111
+    <div
+      className="color-tester"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#111",
+        }
+      }
+    >
+      <h5>
+        Copy
+      </h5>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "background": "#111",
+        "color": "#111",
+      }
+    }
+  >
+    Button
+  </div>
+</li>
+`;
+
+exports[`should render ColorElement component properly 1`] = `
+<li>
+  <div
+    style={
+      Object {
+        "background": "#111",
+      }
+    }
+  >
+    Black
+    : 
+    #111
+    <div
+      className="color-tester"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#111",
+        }
+      }
+    >
+      <h5>
+        Copy
+      </h5>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "background": "#111",
+        "color": "#111",
+      }
+    }
+  >
+    Button
+  </div>
+</li>
+`;
