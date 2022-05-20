@@ -30,18 +30,6 @@ const Home = () => {
     dispatch(getPalette(id));
   }, [dispatch, id]);
 
-  // return (
-  //   <div className="load-home">
-  //     <h5>Loading...</h5>
-  //   </div>
-  // );
-
-  // return (
-  //   <div className="load-home">
-  //     <h5>Something went wrong..</h5>
-  //   </div>
-  // );
-
   const toggleFavoriteHandler = () => {
     if (favorities?.includes(id)) {
       dispatch(palettesActions.removeFavorite(id));

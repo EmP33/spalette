@@ -2,14 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDr6GxWhf0iUSrJvc4z6j_g_g49OHKDPaE",
-  authDomain: "spalette-ea057.firebaseapp.com",
-  databaseURL:
-    "https://spalette-ea057-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "spalette-ea057",
-  storageBucket: "spalette-ea057.appspot.com",
-  messagingSenderId: "972163355149",
-  appId: "1:972163355149:web:e3a9055c621d860ec63b44",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 export const app = initializeApp(firebaseConfig);

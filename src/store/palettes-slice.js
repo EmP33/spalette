@@ -42,6 +42,7 @@ export const getPalettes = () => {
       const palettesRef = ref(database, `palettes`);
       onValue(palettesRef, (snapshot) => {
         const data = snapshot.val();
+
         dispatch(palettesActions.setPalettes(data));
       });
     };
